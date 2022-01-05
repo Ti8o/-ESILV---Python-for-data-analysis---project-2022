@@ -31,7 +31,7 @@ Here are the most interesting visualizations of the legal drugs that we will ana
 ![image](https://user-images.githubusercontent.com/91729640/148275818-c4b7e8d0-1064-4dc0-a609-405130e3c9c4.png)
 ![image](https://user-images.githubusercontent.com/91729640/148275850-be1d03da-65ca-49ca-962d-aee36a97c875.png)
 
-### Conclusions 
+### Analysis & Conclusions 
 
 Alcohol use showed a slight positive correlation with education level, such that higher education was associated with more frequent drinking. Specifically, those with a university degree or higher (i.e., master's or doctorate) drank the most alcohol. In addition, frequent drinkers tended to have higher impulsive sensation seeking (SS) scores, such that a majority of non-drinkers (never drank or drank more than a decade ago) had an SS score close to -1.0 while frequent drinkers (drank one week or one day ago) tended to have a score between 0 and 0.25.
 
@@ -47,6 +47,8 @@ Translated with www.DeepL.com/Translator (free version)
 
 ## Illegal Drug Use
 
+### Vizualisations
+
 Here are the most interesting visualizations of the illegal drugs that we will analyze next:
 ![image](https://user-images.githubusercontent.com/91729640/148276266-b39dc8c1-efe5-4ad2-8e6e-8fa8db1df27f.png)
 ![image](https://user-images.githubusercontent.com/91729640/148276286-56ea21a9-81f8-41ee-8f11-cab94da1e32e.png)
@@ -54,4 +56,94 @@ Here are the most interesting visualizations of the illegal drugs that we will a
 ![image](https://user-images.githubusercontent.com/91729640/148276352-9e9db929-5b39-46a9-9374-c8af173663ca.png)
 ![image](https://user-images.githubusercontent.com/91729640/148276361-3d468841-08b9-4080-af7b-05ecb53f0a82.png)
 ![image](https://user-images.githubusercontent.com/91729640/148276372-57e306b3-fa5e-4278-8246-a8a77a1268b2.png)
+
+### Analysis & Conclusions
+In both cannabis and legal highs, men used the drug more frequently than women. In addition, the frequency of cannabis, legalh, and ecstasy use was negatively correlated with age, so that younger individuals used them more frequently than older individuals.
+
+All illegal drugs were positively correlated with WS. Individuals who never or rarely used any of the illegal drugs showed SS scores of -0.5 to -1.0, while frequent users' scores ranged from 0.5 to 1.5. This relationship was most pronounced among legalh.
+
+Cannabis, ecstasy, and mushrooms also showed a positive correlation with openness to experience (Oscore), with most occasional and infrequent users' scores ranging from 0 to -0.5 while the most frequent users had scores between 0.5 and 1.0.
+
+Finally, I would like to emphasize how, given that the SS scores showed the greatest correlation with drugs, as a measure of personality, it may be the most robust measure for drug use and/or abuse. This personality score can help us better understand those individuals most at risk for substance abuse or addiction in general, which can provide physicians and therapists with a clearer and more nuanced understanding of this patient population.
+
+## Predictions
+
+In order to make our predictions, we need to determine whether or not each case in the dataframe is addictive or not in order to make a prediction afterwards. In the case of nicotine, for example, we have created a last column that presents by 1 or 0 the addiction or not of the person. This column is called Nicotine_User. We therefore create these four variables in the form of columns for each drug whose addicts we want to predict, i.e. for LSD, mushrooms, cannabis and methamphetamine.
+![image](https://user-images.githubusercontent.com/91729640/148282996-355d564c-88fb-4328-b8b0-1cc78291a2e5.png)
+![image](https://user-images.githubusercontent.com/91729640/148283008-760e8568-5227-4ad9-9530-e53e4f0589b2.png)
+![image](https://user-images.githubusercontent.com/91729640/148283023-ae33a2bb-30d3-42a9-b92d-c3e80acc27f4.png)
+![image](https://user-images.githubusercontent.com/91729640/148283036-4788a94a-25c7-4c51-a21f-def3614c2dea.png)
+
+To predict we use four prediction algorithms: Logistic regression, Random Forest Classifier, Ridge Classifier and the Support Vector Machines. To classify the prediction algorithms we will take as a parameter the accuracy.
+
+
+### Nicotine
+
+Here is the accuracy of the different predictions :
+
+![image](https://user-images.githubusercontent.com/91729640/148283281-53a9f2a2-2e97-4b5f-b5ec-eca5ff910da6.png)
+
+We create the confusion matrix of the system that predicts the best (in this case Random Forest):
+
+![image](https://user-images.githubusercontent.com/91729640/148283855-a6001e61-f70d-42fb-ac8b-e15582c9f073.png)
+
+### Methanphetamine
+
+Here is the accuracy of the different predictions :
+
+![image](https://user-images.githubusercontent.com/91729640/148284317-279f8d28-6599-485f-b494-cfd96b237b8a.png)
+
+We create the confusion matrix of the system that predicts the best (in this case Logistic Regression):
+![image](https://user-images.githubusercontent.com/91729640/148284743-f9d28cbf-3d73-4886-9437-5868890b8d9e.png)
+
+### Mushrooms
+
+Here is the accuracy of the different predictions :
+
+![image](https://user-images.githubusercontent.com/91729640/148284840-08bcc4bb-550d-4819-a152-c6594ffbd26a.png)
+
+We create the confusion matrix of the system that predicts the best (in this case Random Forest):
+
+![image](https://user-images.githubusercontent.com/91729640/148284949-b49d59df-f12c-49c4-82ab-71783267a965.png)
+
+### LSD
+
+Here is the accuracy of the different predictions :
+
+![image](https://user-images.githubusercontent.com/91729640/148285253-a3e94ff1-9f0a-4dd8-9b5f-3a448711b671.png)
+
+We create the confusion matrix of the system that predicts the best (in this case Ridge Classifier):
+
+![image](https://user-images.githubusercontent.com/91729640/148285384-5fc0189a-0ba0-4c86-a881-4fcfe4569df2.png)
+
+## Conclusions
+
+In the end, we see that the Random Forest Classifier method is the best performing prediction method. A graph to visualize the prediction shows us where we can observe the accuracy of Random Forest:
+
+![image](https://user-images.githubusercontent.com/91729640/148285813-733b4d39-1f96-446b-8e43-2585751afb07.png)
+
+Some visualizations of these predictions show information that is consistent with our initial dataframe visualizations. Indeed, we notice in the graph below that Random Forest relies the most on the LSD parameter to make these predictions of mushroom addicts which is consistent with the correlation matrix of the dataframe where we notice that LSD and mushrooms are highly correlated:
+
+![image](https://user-images.githubusercontent.com/91729640/148286055-175f1ca9-a41e-496e-8613-b5c61bd2d87b.png)
+
+![image](https://user-images.githubusercontent.com/91729640/148286071-7475d011-98f0-4911-aa25-e235b1eff9db.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
